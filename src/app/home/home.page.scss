@@ -7,12 +7,35 @@
   top: 50%;
   transform: translateY(-50%);
 }
-
+.cont{
+  padding: 5%;
+}
 #container strong {
   font-size: 20px;
   line-height: 26px;
 }
-
+ion-label{
+  padding: 5%;
+}
+ion-card{
+  background: black;
+  color: white;
+}
+ion-header{
+  background: black;
+  color: white;
+}
+ion-title{
+  color: white;
+}
+ion-card-title{
+  // background: black;
+  color: white;
+}
+p{
+  // background: black;
+  color: white;
+}
 #container p {
   font-size: 16px;
   line-height: 22px;
@@ -25,7 +48,6 @@
 #container a {
   text-decoration: none;
 }
-
-ion-content ion-toolbar {
+ion-toolbar {
   --background: translucent;
 }

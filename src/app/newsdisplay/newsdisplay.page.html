@@ -1,0 +1,27 @@
+
+<ion-content>
+  <ion-card *ngIf="data">
+    <ion-header >
+      <ion-toolbar class="cardhead">
+        <ion-title>By <b> {{ data.auth }} </b></ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <img src = {{data.img}}>
+    
+    <ion-card-content>
+      <ion-card-title> {{ data.title }} </ion-card-title>
+      <p>
+       {{ data.content }}
+      </p>
+      <br>
+      <a href={{data.url}}>Read full article online</a>
+    </ion-card-content>
+    <div class="container" >
+    <ion-button color="danger" (click)="back()"><ion-icon name="arrow-back-circle"></ion-icon> Back</ion-button>
+    <ion-button id="leftbut" full color="primary" (click)="speak()">Read out article <ion-icon name="volume-high-outline"></ion-icon> </ion-button>
+    </div>
+  </ion-card>
+    <!-- <ion-button full color="dark" (click)="speak()">Read out this article</ion-button>
+    <ion-button color="primary" (click)="back()">Go back</ion-button>
+  </div> -->
+</ion-content>

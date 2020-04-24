@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      News Tracker
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content> 
+  <div class="cont">
+    <!-- <ion-label>Select category</ion-label> -->
+   <!-- <br> -->
+   <ion-select [(ngModel)]="getSelectedSubject" [value]="coronavirus" (ionChange)="getSelectedSubjectValue(getSelectedSubject)" placeholder="Select category" onchange="getvalue()">
+      <ion-select-option value="coronavirus" >Coronavirus</ion-select-option>
+      <ion-select-option value="sport">Sports</ion-select-option>
+      <ion-select-option value="entertainment" >Entertainment</ion-select-option>
+      <ion-select-option value="technology" selected>Technology</ion-select-option>
+    </ion-select>
   </div>
+  <ion-card *ngFor="let article of data?.articles">
+    <img [src]="article.urlToImage">
+    
+    <ion-card-content (click)="nextpage(article)">
+      <ion-card-title> {{ article.title }} </ion-card-title>
+      <p>
+        {{article.description}}
+      </p>
+    </ion-card-content>
+    <!-- <ion-button (click)="nextpage()">Go to next</ion-button> -->
+  </ion-card>
 </ion-content>
