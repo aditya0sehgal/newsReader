@@ -23,13 +23,9 @@ export class NewsdisplayPage implements OnInit {
             url : params.url,
             auth:params.auth
           }
+          console.log(this.data);
+          
         }
-        console.log(this.data);
-        console.log(this.data.title);
-        // console.log(this.data.description);
-        console.log(this.data.img);
-        // var d = new Date();
-        // console.log(d.getDate(),d.getUTCMonth()+1,d.getFullYear());
       })
   }
 
