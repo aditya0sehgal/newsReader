@@ -36,7 +36,7 @@ export class HomePage {
         await alert.present();
       }
     })
-    this.getData('technology',finaldate);
+    this.getData('top',finaldate);
   }
   
   nextpage(artic){
@@ -48,9 +48,9 @@ export class HomePage {
         title: artic.title,
         description: artic.description,
         content: artic.content,
-        img: artic.urlToImage,
-        url: artic.url,
-        auth:artic.author
+        img: artic.image_url,
+        url: artic.link,
+        auth:artic.source_id
       }
     } 
     this.route.navigate(['/newsdisplay'],navigationExtras);
@@ -60,24 +60,17 @@ export class HomePage {
   getSelectedSubjectValue(getSelectedSubject){
     var d = new Date();
     let finaldate = d.getFullYear()+'-'+(d.getUTCMonth()+1)+'-'+d.getDate();
-    this.getData(getSelectedSubject,finaldate);
-    // console.log(getSelectedSubject);
+    this.getData(getSelectedSubject, finaldate);
 
   }
-  // onChange(selectedValue){
-  //   console.info("Selected:",selectedValue);
-  // }
-  getData(value,finaldate){
-    // let selection = document.getElementById("Select");
+  getData(value, finaldate){
     console.log(finaldate);
-    let url = 'https://newsapi.org/v2/everything?language=en&q='+value+'&from='+finaldate+'&apiKey=2fe23c6efa794d17bdc8b5181508f400';
+    let url = `https://newsdata.io/api/1/news?apikey=pub_111334ce35ab2d284bea603fb5c0f284b1f74&category=${value}&language=en`;
     console.log(url);
     this.http.get(url).subscribe(data => {
       this.data = data;
       console.log(this.data);
-      
     });
-    // console.log(this.data);
   }
 
 

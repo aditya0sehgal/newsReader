@@ -8,24 +8,27 @@
 
 <ion-content> 
   <div class="cont">
-    <!-- <ion-label>Select category</ion-label> -->
-   <!-- <br> -->
    <ion-select [(ngModel)]="getSelectedSubject" [value]="coronavirus" (ionChange)="getSelectedSubjectValue(getSelectedSubject)" placeholder="Select category" onchange="getvalue()">
-      <ion-select-option value="coronavirus" >Coronavirus</ion-select-option>
-      <ion-select-option value="sport">Sports</ion-select-option>
+    <ion-select-option value="top">Top News Items</ion-select-option>
+      <ion-select-option value="business" selected>Technology</ion-select-option>
       <ion-select-option value="entertainment" >Entertainment</ion-select-option>
+      <ion-select-option value="environment">Environment</ion-select-option>
+      <ion-select-option value="food">Food</ion-select-option>
+      <ion-select-option value="health">Health</ion-select-option>
+      <ion-select-option value="politics">Politics</ion-select-option>
+      <ion-select-option value="science">Science</ion-select-option>
+      <ion-select-option value="sports">Sports</ion-select-option>
       <ion-select-option value="technology" selected>Technology</ion-select-option>
     </ion-select>
   </div>
-  <ion-card *ngFor="let article of data?.articles">
-    <img [src]="article.urlToImage">
+  <ion-card *ngFor="let article of data?.results">
+    <img *ngIf="article.image_url" [src]="article.image_url">
     
     <ion-card-content (click)="nextpage(article)">
       <ion-card-title> {{ article.title }} </ion-card-title>
-      <p>
+      <p style="margin-top: 5%;">
         {{article.description}}
       </p>
     </ion-card-content>
-    <!-- <ion-button (click)="nextpage()">Go to next</ion-button> -->
   </ion-card>
 </ion-content>

@@ -19,6 +19,8 @@ export class NewsdisplayPage implements OnInit {
           this.data = {
             title : params.title,
             content : params.content,
+            description : params.description,
+            source_id : params.source_id,
             img : params.img,
             url : params.url,
             auth:params.auth
