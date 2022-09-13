@@ -8,8 +8,9 @@
 
 <ion-content> 
   <div class="cont">
-   <ion-select [(ngModel)]="getSelectedSubject" [value]="coronavirus" (ionChange)="getSelectedSubjectValue(getSelectedSubject)" placeholder="Select category" onchange="getvalue()">
-    <ion-select-option value="top">Top News Items</ion-select-option>
+    
+    <ion-select [(ngModel)]="getSelectedSubject" [value]="coronavirus" (ionChange)="getSelectedSubjectValue(getSelectedSubject)" placeholder="Select category" onchange="getvalue()">
+      <ion-select-option value="top">Top News Items</ion-select-option>
       <ion-select-option value="business" selected>Technology</ion-select-option>
       <ion-select-option value="entertainment" >Entertainment</ion-select-option>
       <ion-select-option value="environment">Environment</ion-select-option>
@@ -21,6 +22,15 @@
       <ion-select-option value="technology" selected>Technology</ion-select-option>
     </ion-select>
   </div>
+
+  <ion-button expand="block" (click)="start()">Speak</ion-button>
+<!--   
+  <ion-list>
+    <ion-item *ngFor="let match of speechMatches">
+      {{ match }}
+    </ion-item>
+  </ion-list> -->
+  
   <ion-card *ngFor="let article of data?.results">
     <img *ngIf="article.image_url" [src]="article.image_url">
     

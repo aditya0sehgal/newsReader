@@ -1,12 +1,19 @@
-.container{
-    // text-align:  center;
-    padding: 2%;
-}
-#leftbut{
-  float: right;
-}
-
-ion-card{
+  .container{
+      // text-align:  center;
+      padding: 2%;
+  }
+  #leftbut{
+    float: right;
+  }
+  ion-toolbar{
+    background-color: white;
+    color: white;
+  }
+  ion-header{
+    background-color: white;
+    color: white;
+  }
+  ion-card{
     margin-top: 5%;
     background: rgba(0, 0, 0, 0.965);
     color: white;
@@ -15,11 +22,10 @@ ion-card{
     // background: black;
     color: white;
   }
-  ion-content{
-      padding: 10%;
-  }
-
   ion-title{
     // background: black;
-    color: rgba(0, 0, 0, 0.877);
+    color: white;
+  }
+  ion-content{
+      padding: 10%;
   }

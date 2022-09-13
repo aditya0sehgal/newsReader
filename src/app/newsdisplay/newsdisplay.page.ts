@@ -32,9 +32,10 @@ export class NewsdisplayPage implements OnInit {
   }
 
   speak():void{
+    const speechContent = this.data.content ? this.data.content : this.data.description
     this.tts.speak({
-      text : 'The title of the article is '+' '+this.data.title+'\n'+'It states '+' '+this.data.content,
-      rate: 0.85
+      text : 'The title of the article is '+' '+this.data.title+'\n \n'+'             .     It states '+' '+speechContent,
+      rate: 0.95
     })
   .then(() => console.log('Success'))
   .catch((reason: any) => console.log(reason));

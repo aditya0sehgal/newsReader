@@ -3,7 +3,7 @@
   <ion-card *ngIf="data">
     <ion-header >
       <ion-toolbar class="cardhead">
-        <ion-title>By <b> {{ data.auth }} </b></ion-title>
+        <ion-title>By : <b> {{ data.auth.toUpperCase() }} </b> </ion-title>
       </ion-toolbar>
     </ion-header>
     <img *ngIf="data.img" src = {{data.img}}>
